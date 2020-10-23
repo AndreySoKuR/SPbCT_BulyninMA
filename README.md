@@ -10,7 +10,7 @@
  
  Кукелева Карина
  
- [:flag_ua: Позняк Михаил](https://github.com/KotletoVM)
+ [🇺🇦 Позняк Михаил](https://github.com/KotletoVM)
  
  🐸 Яскунова Анна
 ## ✔ Лабораторная работа 9-10
