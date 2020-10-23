@@ -3,10 +3,15 @@
 
 ## Комманда
  Аляхунов Амир
- [👤Булынин Михаил](https://github.com/m1xxos)
+ 
+ [🐱‍💻Булынин Михаил](https://github.com/m1xxos)
+ 
  [🤡Гиреев Тимур](https://github.com/Gesendex)
+ 
  Кукелева Карина
+ 
  Позняк Михаил
+ 
  🐸Яскунова Анна
 ## ✔ Лабораторная работа 9-10
  [📁 Класс Time](https://github.com/m1xxos/SPbCT_BulyninMA/tree/main/time)
