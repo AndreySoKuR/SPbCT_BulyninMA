@@ -14,7 +14,7 @@
  
  🐸 Яскунова Анна
 ## ✔ Лабораторная работа 9-10
- [📁 Класс Time](https://github.com/m1xxos/SPbCT_BulyninMA/tree/main/time)
+ [📁 Класс Time](https://github.com/m1xxos/SPbCT_BulyninMA/tree/main/Laba9-10/time)
  
  [📁 Класс треугольников](https://github.com/Gesendex/SPbCT_GireevTU/tree/main/triangle)
  
