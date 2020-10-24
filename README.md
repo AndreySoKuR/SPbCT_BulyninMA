@@ -19,7 +19,7 @@
  [📁 Класс треугольников](https://github.com/Gesendex/SPbCT_GireevTU/tree/main/triangle)
  
  [📁 Задание](https://github.com/Gesendex/SPbCT_GireevTU/tree/main/Laba9-10)
-##  ⏳ Лабораторная работа 11-12
+##  ✔ Лабораторная работа 11-12
  [📁 Задание](https://github.com/m1xxos/SPbCT_BulyninMA/tree/main/Laba11-12)
 ##  ✔ Лабораторная работа 13
  [📁 Задание](https://github.com/m1xxos/SPbCT_BulyninMA/tree/main/Laba13)
