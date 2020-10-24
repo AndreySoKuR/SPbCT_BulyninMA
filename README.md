@@ -8,7 +8,7 @@
  
  [🤡 Гиреев Тимур](https://github.com/Gesendex)
  
- 🐑Кукелева Карина
+ 🐑 Кукелева Карина
  
  [🐫 Позняк Михаил](https://github.com/KotletoVM)
  
