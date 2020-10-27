@@ -24,7 +24,7 @@
 ##  ✔ Лабораторная работа 13
  [📁 Задание](https://github.com/m1xxos/SPbCT_BulyninMA/tree/main/Laba13)
 ##  ⏳ Лабораторная работа 14
- 📁 Задание
+ [📁 Задание](https://github.com/m1xxos/SPbCT_BulyninMA/tree/main/Laba14)
 ##  ❌ Лабораторная работа 15
 ##  ❌ Лабораторная работа 16
 ##  ❌ Лабораторная работа 17
