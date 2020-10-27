@@ -1,5 +1,7 @@
 #pragma once
 #include <string>
+#define _USE_MATH_DEFINES
+#include <math.h>
 namespace Project6 {
 
 	using namespace System;
@@ -9,48 +11,60 @@ namespace Project6 {
 	using namespace System::Data;
 	using namespace System::Drawing;
 
-	// __interface I_CHO
-//{
-//	int rasschet();
-//};
+ public class I_CHO                                         //интерфейс I_CHO
+{
+public:
+	virtual double rasschet() = 0;
+};
 
-	public class Reservoir {
+ public class Reservoir : I_CHO{							//базовый класс Резервуар
 	public:
 		char tip;
 		double cost;
 		double V;
-		virtual int rasschet() = 0;
+
 	};
 
-	class Butt :public Reservoir {
+	class Butt :public Reservoir {							//класс Бочка, унаследованный от класса Резервуар
 	public:
 		int uroven = 0;
-		int rasschet() override {
-			return 0;
-		};
-		int obem_zhid_kosti() {
+		double H = 0;
+		double R = 0;
+		/*double rasscheet() {
+			return M_PI * pow(R, 2) * H;
+		}*/
+		double rasschet() {
+			return M_PI * pow(R, 2) * H;
+
+		}
+		double obem_zhid_kosti(double V) {
 			return V / 100 * uroven;
-		};
+		}
 	};
-	class Canister : public Reservoir {
+	class Canister : public Reservoir {						//класс Канистра, унаследованный от класса Резервуар
 	public:
 		int uroven = 0;
-		int rasschet() override {
-			return 0;
-		};
-		int obem_zhid_kosti() {
+		double W = 0;
+		double H = 0;
+		double L = 0;
+		double rasschet() {
+			return W * H * L;
+		}
+		double obem_zhid_kosti(double V) {
 			return V / 100 * uroven;
-		};
+		}
 	};
 
-	class Warehouse {
+	class Warehouse {										//класс Склад
 	public:
 		int length = 10;
 		Canister* array = new Canister[length];
 		Butt* array1 = new Butt[length];
 		Warehouse() {
 			for (int i = 0; i < length; i++) {
-				array[i].V = 100;
+				array[i].W = 2;
+				array[i].H = 7;
+				array[i].L = 5;
 				array[i].uroven = rand() % 101;
 				if (i % 2 == 0) {
 					array[i].tip = 'k';
@@ -58,7 +72,8 @@ namespace Project6 {
 				else {
 					array[i].tip = 'b';
 				}
-				array1[i].V = 200;
+				array1[i].H = 10;
+				array1[i].R = 10;
 				array1[i].uroven = rand() % 101;
 				if (i % 2 == 0) {
 					array1[i].tip = 'k';
@@ -153,12 +168,12 @@ namespace Project6 {
 #pragma endregion
 	private: System::Void button1_Click(System::Object^ sender, System::EventArgs^ e) {
 		label1->Text = "Общая стоимость хранящегося на складе топлива:";
-		int length = 10;
-		long long int sum = 0;
-		int cost1 = 0;
-		int cost2 = 0;
+		double length = 10;
+		long double sum = 0;
+		double cost1 = 0;
+		double cost2 = 0;
 		Warehouse warehouse;
-		for (int i = 0; i <= length; i++) {
+		for (int i = 0; i < length; i++) {
 			if (warehouse.array[i].tip == 'k') {
 				warehouse.array[i].cost = 100;
 			}
@@ -171,19 +186,20 @@ namespace Project6 {
 			else if (warehouse.array1[i].tip == 'b') {
 				warehouse.array1[i].cost = 200;
 			}
-			cost1 = warehouse.array[i].obem_zhid_kosti() * warehouse.array[i].cost;
-			cost2 = warehouse.array1[i].obem_zhid_kosti() * warehouse.array1[i].cost;
+			double V1 = warehouse.array[i].rasschet();
+			double V2 = warehouse.array1[i].rasschet();
+			cost1 = warehouse.array[i].obem_zhid_kosti(V1) * warehouse.array[i].cost;
+			cost2 = warehouse.array1[i].obem_zhid_kosti(V2) * warehouse.array1[i].cost;
 			sum += cost1;
 			sum += cost2;
 			cost1 = 0;
 			cost2 = 0;
 		};
-		label1->Text += sum + " руб.";
+		sum = lround(sum);
+		label1->Text += sum + " руб.";								//общая стоимость всего хранящегося на складе топлива
 	}
 	private: System::Void MyForm_Load(System::Object^ sender, System::EventArgs^ e) {
 		srand(time(0));
 	}
 	};
-	
-	
 }

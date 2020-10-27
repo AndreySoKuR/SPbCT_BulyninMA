@@ -14,6 +14,8 @@ Assembly System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=
 	hash=None, flags=None
 Assembly System.Xml, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089: 
 	hash=None, flags=None
+Struct Project6.I_CHO: AutoLayout, AnsiClass, Class, Public, SequentialLayout, Abstract, Sealed, BeforeFieldInit
+  :System.ValueType
 Struct Project6.Reservoir: AutoLayout, AnsiClass, Class, Public, SequentialLayout, Abstract, Sealed, BeforeFieldInit
   :System.ValueType
 Class Project6.MyForm: AutoLayout, AnsiClass, Class, Public, BeforeFieldInit
