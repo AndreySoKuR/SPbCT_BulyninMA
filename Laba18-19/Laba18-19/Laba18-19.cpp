@@ -35,12 +35,10 @@ int _tmain(int argc, LPTSTR argv[])
 	int i, j, k, KEY;
 	BOOL f2;
 	LPCTSTR pF;
-	hFile = CreateFile(argv[1], GENERIC_READ, 0, NULL,
-		OPEN_EXISTING, FILE_ATTRIBUTE_NORMAL, NULL);
+	hFile = CreateFile(argv[1], GENERIC_READ, 0, NULL, OPEN_EXISTING, FILE_ATTRIBUTE_NORMAL, NULL);
 	FsLow = GetFileSize(hFile, NULL);
 	printf("Fs=%d\n", (int)FsLow);
-	hMap = CreateFileMapping(hFile, NULL, PAGE_READONLY,
-		0, 0, NULL);
+	hMap = CreateFileMapping(hFile, NULL, PAGE_READONLY, 0, 0, NULL);
 	pFile = MapViewOfFile(hMap, FILE_MAP_READ, 0, 0, 0);
 	pF = (LPCTSTR)pFile;
 	for (i = 0; i < (int)FsLow; i++)
@@ -51,8 +49,7 @@ int _tmain(int argc, LPTSTR argv[])
 	for (i = 0; i < (int)FsLow; i++)
 		printf("%c", Buffer1[i]);
 	printf("\n");
-	hFile2 = CreateFile(argv[2], GENERIC_READ, 0, NULL,
-		OPEN_EXISTING, FILE_ATTRIBUTE_NORMAL, NULL);
+	hFile2 = CreateFile(argv[2], GENERIC_READ, 0, NULL, OPEN_EXISTING, FILE_ATTRIBUTE_NORMAL, NULL);
 	f2 = ReadFile(hFile2, Buffer2, BUF_SIZE, &nf2, NULL);
 	KEY = GetFileSize(hFile2, NULL);
 	printf("KEY=%d\n", (int)KEY);

@@ -1,0 +1,6 @@
+﻿  Cpc.cpp
+D:\Trash\Учеба\СП\Лабы\17\Cpc\Cpc.cpp(21,1): warning C4996: 'fopen': This function or variable may be unsafe. Consider using fopen_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+C:\Program Files (x86)\Windows Kits\10\Include\10.0.18362.0\ucrt\stdio.h(208): message : см. объявление "fopen"
+D:\Trash\Учеба\СП\Лабы\17\Cpc\Cpc.cpp(29,1): warning C4996: 'fopen': This function or variable may be unsafe. Consider using fopen_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+C:\Program Files (x86)\Windows Kits\10\Include\10.0.18362.0\ucrt\stdio.h(208): message : см. объявление "fopen"
+  Cpc.vcxproj -> D:\Trash\Учеба\СП\Лабы\17\Cpc\Debug\Cpc.exe
