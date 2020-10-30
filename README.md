@@ -1,14 +1,14 @@
 # SPbCT_BulyninMA
  Лабораторные работы по системному программированию
 
-## Команда
+## Бригада
  [🥐 Аляхунов Амир](https://github.com/AmirAlyakhunov)
  
  [🐱‍💻 Булынин Михаил](https://github.com/m1xxos)
  
  [🤡 Гиреев Тимур](https://github.com/Gesendex)
  
- 🐑 Кукелева Карина
+ [🐑 Кукелева Карина](https://github.com/ovchens)
  
  [🐫 Позняк Михаил](https://github.com/KotletoVM)
  
