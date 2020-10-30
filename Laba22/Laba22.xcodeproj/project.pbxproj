@@ -23,6 +23,7 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
+		22D693E1254CB2CB002A29B9 /* bruh.txt */ = {isa = PBXFileReference; lastKnownFileType = text; path = bruh.txt; sourceTree = "<group>"; };
 		22FC4F52254B551F003B8606 /* Laba22 */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.executable"; includeInIndex = 0; path = Laba22; sourceTree = BUILT_PRODUCTS_DIR; };
 		22FC4F55254B551F003B8606 /* main.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = main.cpp; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -58,6 +59,7 @@
 			isa = PBXGroup;
 			children = (
 				22FC4F55254B551F003B8606 /* main.cpp */,
+				22D693E1254CB2CB002A29B9 /* bruh.txt */,
 			);
 			path = Laba22;
 			sourceTree = "<group>";

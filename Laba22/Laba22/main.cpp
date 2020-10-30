@@ -15,19 +15,27 @@
 int main()
 {
     int x, pid;
+    FILE *f;
+    f = fopen("/Users/macos/SPbCT_BulyninMA/Laba22/Laba22/bruh.txt", "w");
     x=5;
+    fprintf(f, "Standart, x = %d\n",x);
     printf("Standart, x = %d\n",x);
     x++;
+    fprintf(f, "after ++, x = %d\n",x);
     printf("after ++, x = %d\n",x);
     pid=fork();
     if (pid == 0){
+        fprintf(f, "\nChild 1, x = %d\n",x);
         printf("\nChild 1, x = %d\n",x);
         x-=3;
-        printf("Child 2, x = %d\n",x); // Потомок
+        fprintf(f, "Child 2, x = %d\n",x); // Потомок
+        printf("Child 2, x = %d\n",x);
     }
     else if(pid > 0){ // Родитель
+        fprintf(f, "\nParent 1, x = %d, pid = %d\n",x,pid);
         printf("\nParent 1, x = %d, pid = %d\n",x,pid);
         x+=2;
+        fprintf(f, "Parent 2, x = %d\n",x);
         printf("Parent 2, x = %d\n",x);
         sleep(5);
         waitpid(pid, NULL, NULL);
