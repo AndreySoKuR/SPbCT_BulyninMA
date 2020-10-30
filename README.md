@@ -1,14 +1,14 @@
 # SPbCT_BulyninMA
  Лабораторные работы по системному программированию
 
-## Команда
+## Бригада
  [🥐 Аляхунов Амир](https://github.com/AmirAlyakhunov)
  
  [🐱‍💻 Булынин Михаил](https://github.com/m1xxos)
  
  [🤡 Гиреев Тимур](https://github.com/Gesendex)
  
- 🐑 Кукелева Карина
+ [🐑 Кукелева Карина](https://github.com/ovchens)
  
  [🐫 Позняк Михаил](https://github.com/KotletoVM)
  
@@ -25,7 +25,13 @@
  [📁 Задание](https://github.com/m1xxos/SPbCT_BulyninMA/tree/main/Laba13)
 ##  ✔ Лабораторная работа 14
  [📁 Задание](https://github.com/m1xxos/SPbCT_BulyninMA/tree/main/Laba14)
-##  ❌ Лабораторная работа 15-16
-##  ❌ Лабораторная работа 17
+##  ✔ Лабораторная работа 15-16
+ [📁 Задание](https://github.com/m1xxos/SPbCT_BulyninMA/tree/main/Laba15-16/labr1516)
+##  ✔ Лабораторная работа 17
+ [📁 Задание](https://github.com/m1xxos/SPbCT_BulyninMA/tree/main/Laba17)
 ##  ✔ Лабораторная работа 18-19
  [📁 Задание](https://github.com/m1xxos/SPbCT_BulyninMA/tree/main/Laba18-19)
+##  ⏳ Лабораторная работа 20
+##  ❌ Лабораторная работа 21
+##  ⏳ Лабораторная работа 22
+ [📁 Задание](https://github.com/m1xxos/SPbCT_BulyninMA/tree/main/Laba22)
