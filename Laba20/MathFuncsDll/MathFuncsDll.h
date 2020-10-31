@@ -21,5 +21,7 @@ namespace MathFuncs
 		// Returns a / b
 		// Throws const std::invalid_argument& if b is 0
 		static MATHFUNCSDLL_API double Divide(double a, double b);
+
+		static MATHFUNCSDLL_API double Pow(double a, int b);
 	};
 }

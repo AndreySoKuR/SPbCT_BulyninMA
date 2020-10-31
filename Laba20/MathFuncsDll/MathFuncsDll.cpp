@@ -24,4 +24,13 @@ namespace MathFuncs
 		}
 		return a / b;
 	}
+	double MyMathFuncs::Pow(double a, int b)
+	{
+		for (int i = 0; i < b - 1; i++)
+			a *= a;
+		if (b == 0)
+			return 1;
+		else
+			return a;
+	}
 }
