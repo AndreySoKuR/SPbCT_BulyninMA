@@ -1,0 +1,6 @@
+﻿  ControlWork.cpp
+C:\Users\bulyn\Desktop\SPbCT_BulyninMA\ControlWork\ControlWork\ControlWork.cpp(15,27): warning C4244: инициализация: преобразование "__int64" в "int", возможна потеря данных
+C:\Users\bulyn\Desktop\SPbCT_BulyninMA\ControlWork\ControlWork\ControlWork.cpp(12,15): warning C4996: 'fopen': This function or variable may be unsafe. Consider using fopen_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+C:\Users\bulyn\Desktop\SPbCT_BulyninMA\ControlWork\ControlWork\ControlWork.cpp(26,9): warning C4996: 'fopen': This function or variable may be unsafe. Consider using fopen_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+C:\Users\bulyn\Desktop\SPbCT_BulyninMA\ControlWork\ControlWork\ControlWork.cpp(14,10): warning C4101: c: неиспользованная локальная переменная
+  ControlWork.vcxproj -> C:\Users\bulyn\Desktop\SPbCT_BulyninMA\ControlWork\Debug\ControlWork.exe
