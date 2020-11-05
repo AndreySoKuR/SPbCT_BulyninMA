@@ -25,13 +25,17 @@ int main(int argc, char* argv[])
     fclose(f);
     f = fopen(argv[1], "w");
     cout << "\nNew file:\n";
-    for (int i = 0; i < counter - 1; i++) {
+    for (int i = 0; i < counter; i++) {
         if (i == max) {
             fprintf(f, "X");
             cout << "X ";
         }
         fprintf(f, "%c", ch[i]);
         cout << ch[i] << " ";
+    }
+    if (counter <= max) {
+        fprintf(f, "X");
+        cout << "X ";
     }
     fclose(f);
 }
