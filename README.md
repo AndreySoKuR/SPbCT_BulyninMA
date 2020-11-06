@@ -12,7 +12,7 @@
  
  [🐫 Позняк Михаил](https://github.com/KotletoVM)
  
- 🐸 Яскунова Анна
+ [🐸 Яскунова Анна](https://github.com/Anya-jpg)
 ## ✔ Лабораторная работа 9-10
  [📁 Класс Time](https://github.com/m1xxos/SPbCT_BulyninMA/tree/main/Laba09-10/time)
  
