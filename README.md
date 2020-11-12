@@ -37,5 +37,6 @@
  [📁 Задание](https://github.com/m1xxos/SPbCT_BulyninMA/tree/main/Laba21)
 ##  ✔ Лабораторная работа 22
  [📁 Задание](https://github.com/m1xxos/SPbCT_BulyninMA/tree/main/Laba22)
-##  ❌ Лабораторная работа 23
+##  ✔ Лабораторная работа 23
+ [📁 Задание](https://github.com/m1xxos/SPbCT_BulyninMA/tree/main/Laba23)
 ##  ❌ Лабораторная работа 24
