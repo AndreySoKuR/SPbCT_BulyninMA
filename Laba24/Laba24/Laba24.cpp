@@ -1,74 +1,60 @@
 ﻿#include <iostream>
 #include <windows.h>
-
-
 using namespace std;
+HANDLE mutex;
+HANDLE sobit[4];
+HANDLE zak_sobit;
 
-HANDLE Events[4], EndEvent;
-HANDLE Mutex;
+DWORD WINAPI Employee(LPVOID lpParam){
+	int mes;
+	WaitForSingleObject(mutex, INFINITE);
+	if (WaitForSingleObject(zak_sobit, 10) == WAIT_TIMEOUT) {
+		cout << "Ввод специальных событий «0», «1», «2», «3»: \n";
+		cin >> mes;
+		cout << "Введено: " << mes << ".\n";
+		if (mes < 0 || mes > 3) {
+			cout << "Неверный ввод. Только «0», «1», «2», «3»\n";
+		}
 
-DWORD WINAPI Employee(LPVOID lpParam) {
-	char in;
-	if (WaitForSingleObject(Mutex, INFINITE) != 0) {
-		cout << "Не удалось занять мьютекс\n";
-		return 1;
-	}
-	if (WaitForSingleObject(EndEvent, 10) == WAIT_TIMEOUT) {
-		cout << "Введите сообщение (0 или 1, или 2, или 3): ";
-		cin >> in;
-		if (cin.fail() || (in < '0' || in>'3'))
-			cout << "Введены неправильные данные\n";
-		else if (SetEvent(Events[(unsigned int)(in - '0')]) == 0)
-			cout << "Не удалось установить событие\n";
-		ReleaseMutex(Mutex);
+		else SetEvent(sobit[(unsigned int)(mes - 0)]);
+		ReleaseMutex(mutex);
 		return 0;
 	}
 	else {
-		ReleaseMutex(Mutex);
+		ReleaseMutex(mutex);
 		return 1;
 	}
+
 }
 
-void main() {
-	setlocale(LC_ALL, ".1251");
-	cout << "Введите количество потоков для запуска: ";
-	unsigned int n;
-	cin >> n;
-	if (cin.fail()) {
-		cout << "Введены неправильные данные\n";
-		ExitProcess(1);
+int main(int argc, char* argv[]) {
+	SetConsoleCP(1251);
+	SetConsoleOutputCP(1251);
+	int kol = 0;
+
+	cout << "Количество процессов Employee: ";
+	cin >> kol;
+
+	cout << "Создано " << kol << " процессов Employee:\n";
+	for (int i = 0; i < 4; i++){
+		sobit[i] = CreateEventA(0, 0, 0, 0);
+}
+	zak_sobit = CreateEventA(0, 1, 0, 0);
+	mutex = CreateMutexA(0, 1, 0);
+
+	HANDLE* Threads = new HANDLE[kol];
+	for (int i = 0; i < kol; i++) {
+		Threads[i] = CreateThread(0, 0, Employee, 0, 0, 0);
+}
+	ReleaseMutex(mutex);
+	for (int i = 0; i < 3; i++) {
+		WaitForMultipleObjects(4, sobit, 0, INFINITE);
+		cout << "Сообщение " << i + 1 << " принято!\n";
 	}
-	cout << "Будет создано потоков: " << n << endl;
-	//Запуск потоков
-	for (unsigned int i = 0; i < 4; i++)
-		if ((Events[i] = CreateEventA(0, 0, 0, 0)) == 0) {
-			cout << "Не удалось создать событие \"" << i << "\"\n";
-			ExitProcess(1);
-		}
-	if ((EndEvent = CreateEventA(0, 1, 0, 0)) == 0) {
-		cout << "Не удалось создать событие\n";
-		ExitProcess(1);
-	}
-	Mutex = CreateMutexA(0, 1, 0);
-	HANDLE* Threads = new HANDLE[n];
-	for (unsigned int i = 0; i < n; i++)
-		if ((Threads[i] = CreateThread(0, 0, Employee, 0, 0, 0)) == 0) {
-			cout << "Не удалось создать поток №" << i + 1 << endl;
-			ExitProcess(1);
-		}
-	cout << "Создано потоков: " << n << endl;
-	ReleaseMutex(Mutex);
-	//Ожидание 3 сообщений
-	for (unsigned int i = 0; i < 3; i++) {
-		WaitForMultipleObjects(4, Events, 0, INFINITE);
-		cout << "Принято сообщение №" << i + 1 << endl;
-	}
-	//Блокирование последующих сообщений
-	SetEvent(EndEvent);
-	WaitForSingleObject(Mutex, INFINITE);
-	ResetEvent(EndEvent);
-	cout << "Программа успешно завершается\n";
+	cout << "Последующая передача сообщений блокирована с помощью mutex.";
+	SetEvent(zak_sobit);
+	WaitForSingleObject(mutex, INFINITE);
+	ResetEvent(zak_sobit);
 	delete[] Threads;
-	//Завершение работы
 	ExitProcess(0);
 }
