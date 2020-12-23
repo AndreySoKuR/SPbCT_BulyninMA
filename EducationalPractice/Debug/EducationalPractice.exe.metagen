@@ -18,6 +18,8 @@ Assembly System.Xml, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c5619
 Class EducationalPractice.MyForm: AutoLayout, AnsiClass, Class, Public, BeforeFieldInit
   :System.Windows.Forms.Form
     Void .ctor(): PrivateScope, Public, HideBySig, SpecialName, RTSpecialName
+  Methods:
+    run(vector<char\,std::allocator<char> >*, basic_ifstream<char\,std::char_traits<char> >*, SByte* IsConst IsConst): PrivateScope, Public, HideBySig
 Class EducationalPractice.MyForm1: AutoLayout, AnsiClass, Class, Public, BeforeFieldInit
   :System.Windows.Forms.Form
     Void .ctor(): PrivateScope, Public, HideBySig, SpecialName, RTSpecialName

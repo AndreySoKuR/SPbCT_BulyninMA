@@ -5,10 +5,13 @@
 #include <vector>
 #include <iterator>
 
-#define MATHLIBRARY_API __declspec(dllexport)
+#ifdef EDUCATIONALPRACTICEDLL_EXPORTS
+#define EDUCATIONALPRACTICEDLL_API __declspec(dllexport)
+#else
+#define EDUCATIONALPRACTICEDLL_API __declspec(dllimport)
+#endif
 
 
-
-MATHLIBRARY_API void writeTo(const std::vector<char> & data);
+extern "C" EDUCATIONALPRACTICEDLL_API void writeTo(const std::vector<char> & data);
 
 
