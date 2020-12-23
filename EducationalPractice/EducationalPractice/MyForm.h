@@ -1,4 +1,5 @@
 #pragma once
+//#include "MathLibrary.h"
 #include <iostream>
 #include <mutex>
 #include <fstream>
@@ -8,6 +9,8 @@
 #include <algorithm>
 #include <thread>
 #include <chrono>
+
+
 
 namespace EducationalPractice {
 
@@ -19,6 +22,7 @@ namespace EducationalPractice {
 	using namespace System::Drawing;
 	using namespace std;
 	using namespace System::IO;
+	
 
 
 	/// <summary>
@@ -186,7 +190,7 @@ namespace EducationalPractice {
 
 		}
 #pragma endregion
-	void writeTo(const std::string& filepath, const  vector<char>& data)
+	void writeTo(const  vector<char>& data)
 	{
 		ofstream filestream("sorted.txt", ios::app);
 		copy(data.begin(), data.end(), std::ostream_iterator<char>(filestream, " "));
@@ -221,70 +225,70 @@ private: System::Void button1_Click(System::Object^ sender, System::EventArgs^ e
 		v1.push_back(values[i]);
 	}
 	sort(v1.begin(), v1.end());
-	writeTo("sorted.txt", v1);
+	writeTo(v1);
 	for (int i = 10; i < 20; i++)
 	{
 		f >> values[i];
 		v2.push_back(values[i]);
 	}
 	sort(v2.begin(), v2.end());
-	writeTo("sorted.txt", v2);
+	writeTo(v2);
 	for (int i = 20; i < 30; i++)
 	{
 		f >> values[i];
 		v3.push_back(values[i]);
 	}
 	sort(v3.begin(), v3.end());
-	writeTo("sorted.txt", v3);
+	writeTo(v3);
 	for (int i = 30; i < 40; i++)
 	{
 		f >> values[i];
 		v4.push_back(values[i]);
 	}
 	sort(v4.begin(), v4.end());
-	writeTo("sorted.txt", v4);
+	writeTo(v4);
 	for (int i = 40; i < 50; i++)
 	{
 		f >> values[i];
 		v5.push_back(values[i]);
 	}
 	sort(v5.begin(), v5.end());
-	writeTo("sorted.txt", v5);
+	writeTo(v5);
 	for (int i = 50; i < 60; i++)
 	{
 		f >> values[i];
 		v6.push_back(values[i]);
 	}
 	sort(v6.begin(), v6.end());
-	writeTo("sorted.txt", v6);
+	writeTo(v6);
 	for (int i = 60; i < 70; i++)
 	{
 		f >> values[i];
 		v7.push_back(values[i]);
 	}
 	sort(v7.begin(), v7.end());
-	writeTo("sorted.txt", v7);
+	writeTo(v7);
 	for (int i = 70; i < 80; i++)
 	{
 		f >> values[i];
 		v8.push_back(values[i]);
 	}
 	sort(v8.begin(), v8.end());
-	writeTo("sorted.txt", v8);
+	writeTo(v8);
 	for (int i = 80; i < 90; i++)
 	{
 		f >> values[i];
 		v9.push_back(values[i]);
 	}
 	sort(v9.begin(), v9.end());
-	writeTo("sorted.txt", v9);
+	writeTo(v9);
 	for (int i = 90; i < 100; i++)
 	{
 		f >> values[i];
 		v10.push_back(values[i]);
 	}
 	sort(v10.begin(), v10.end());
-	writeTo("sorted.txt", v10);
+	writeTo(v10);
 	f.close();
 	String^ Filename = "sorted.txt";
 	StreamReader^ file = File::OpenText(Filename); // Cчитывание файла
