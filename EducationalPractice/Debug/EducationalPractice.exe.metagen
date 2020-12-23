@@ -19,7 +19,16 @@ Class EducationalPractice.MyForm: AutoLayout, AnsiClass, Class, Public, BeforeFi
   :System.Windows.Forms.Form
     Void .ctor(): PrivateScope, Public, HideBySig, SpecialName, RTSpecialName
   Methods:
-    run(vector<char\,std::allocator<char> >*, basic_ifstream<char\,std::char_traits<char> >*, SByte* IsConst IsConst): PrivateScope, Public, HideBySig
+    vec1(): PrivateScope, Public, HideBySig
+    vec2(): PrivateScope, Public, HideBySig
+    vec3(): PrivateScope, Public, HideBySig
+    vec4(): PrivateScope, Public, HideBySig
+    vec5(): PrivateScope, Public, HideBySig
+    vec6(): PrivateScope, Public, HideBySig
+    vec7(): PrivateScope, Public, HideBySig
+    vec8(): PrivateScope, Public, HideBySig
+    vec9(): PrivateScope, Public, HideBySig
+    vec10(): PrivateScope, Public, HideBySig
 Class EducationalPractice.MyForm1: AutoLayout, AnsiClass, Class, Public, BeforeFieldInit
   :System.Windows.Forms.Form
     Void .ctor(): PrivateScope, Public, HideBySig, SpecialName, RTSpecialName

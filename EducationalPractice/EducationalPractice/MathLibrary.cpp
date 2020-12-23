@@ -11,13 +11,13 @@ void writeTo(const std::vector<char>& data)
         filestream << "\n";
         filestream.close();
     }
-void run(std::vector<char> v1, std::ifstream f, char values[]) {
-	for (int i = 0; i < 10; i++)
-	{
-		f >> values[i];
-		v1.push_back(values[i]);
-	}
-	sort(v1.begin(), v1.end());
-	writeTo(v1);
-}
+//void run(std::vector<char> v1, std::ifstream f, char []) {
+//	for (int i = 0; i < 10; i++)
+//	{
+//		f >> values[i];
+//		v1.push_back(values[i]);
+//	}
+//	sort(v1.begin(), v1.end());
+//	writeTo(v1);
+//}
 

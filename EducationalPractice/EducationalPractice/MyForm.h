@@ -7,19 +7,8 @@
 #include <iterator>
 #include <string>
 #include <algorithm>
-#include <thread>
 #include <chrono>
-#include <Windows.h>
 
-void run(std::vector<char> v1, std::ifstream f, char values[]) {
-	for (int i = 0; i < 10; i++)
-	{
-		f >> values[i];
-		v1.push_back(values[i]);
-	}
-	sort(v1.begin(), v1.end());
-	writeTo(v1);
-}
 
 
 namespace EducationalPractice {
@@ -31,6 +20,7 @@ namespace EducationalPractice {
 	using namespace System::Drawing;
 	using namespace std;
 	using namespace System::IO;
+	using namespace System::Threading;
 	
 
 
@@ -45,7 +35,7 @@ namespace EducationalPractice {
 			InitializeComponent();
 			DateTime datetime = DateTime::Now;
 			this->label2->Text = datetime.ToString();
-
+			
 			
 			//
 			//TODO: добавьте код конструктора
@@ -65,9 +55,19 @@ namespace EducationalPractice {
 		}
 	private: System::Windows::Forms::Label^ label1;
 	private: System::Windows::Forms::Label^ label2;
-
 	private: System::Windows::Forms::Button^ button1;
 
+	private: Thread^ myThread1;
+	private: Thread^ myThread2;
+	private: Thread^ myThread3;
+	private: Thread^ myThread4;
+	private: Thread^ myThread5;
+	private: Thread^ myThread6;
+	private: Thread^ myThread7;
+	private: Thread^ myThread8;
+	private: Thread^ myThread9;
+	private: Thread^ myThread10;
+	
 
 	private: System::Windows::Forms::TextBox^ textBox1;
 	private: System::Windows::Forms::Button^ button2;
@@ -201,15 +201,7 @@ namespace EducationalPractice {
 		}
 
 #pragma endregion
-	//void writeTo(const  vector<char>& data)
-	//{
-	//	ofstream filestream("sorted.txt", ios::app);
-	//	copy(data.begin(), data.end(), std::ostream_iterator<char>(filestream, " "));
-	//	filestream << "\n";
-	//	filestream.close();
-	//}
-	
-	
+
 
 	
 private: System::Void button2_Click(System::Object^ sender, System::EventArgs^ e) {
@@ -217,97 +209,203 @@ private: System::Void button2_Click(System::Object^ sender, System::EventArgs^ e
 	StreamReader^ file = File::OpenText(Filename); 
 	textBox1->Text = file->ReadToEnd(); 
 }
-private: System::Void button1_Click(System::Object^ sender, System::EventArgs^ e) {
-	char values[100];
-	std::vector<char> v1;
-	std::vector<char> v2;
-	std::vector<char> v3;
-	std::vector<char> v4;
-	std::vector<char> v5;
-	std::vector<char> v6;
-	std::vector<char> v7;
-	std::vector<char> v8;
-	std::vector<char> v9;
-	std::vector<char> v10;
-	ofstream filestream("sorted.txt");
-	filestream.close();
+	
+public: void vec1() {
+	char letter;
 	ifstream f;
+	std::vector<char> v1;
 	f.open("text.txt");
-	thread firs(run, v1, f , values);
 	for (int i = 0; i < 10; i++)
 	{
-		f >> values[i];
-		v1.push_back(values[i]);
+		f >> letter;
+		v1.push_back(letter);
 	}
 	sort(v1.begin(), v1.end());
 	writeTo(v1);
-	//firs.join();
-	for (int i = 10; i < 20; i++)
+	f.close();
+}
+public: void vec2() {
+	char letter;
+	ifstream f;
+	std::vector<char> v2;
+	f.open("text.txt");
+	for (int i = 0; i < 10; i++)
+		f >> letter;
+	for (int i = 0; i < 10; i++)
 	{
-		f >> values[i];
-		v2.push_back(values[i]);
+		f >> letter;
+		v2.push_back(letter);
 	}
 	sort(v2.begin(), v2.end());
 	writeTo(v2);
-	for (int i = 20; i < 30; i++)
+	f.close();
+}
+public: void vec3() {
+	char letter;
+	ifstream f;
+	f.seekg(20);
+	std::vector<char> v3;
+	f.open("text.txt");
+	for (int i = 0; i < 20; i++)
+		f >> letter;
+	for (int i = 0; i < 10; i++)
 	{
-		f >> values[i];
-		v3.push_back(values[i]);
+		f >> letter;
+		v3.push_back(letter);
 	}
 	sort(v3.begin(), v3.end());
 	writeTo(v3);
-	for (int i = 30; i < 40; i++)
+	f.close();
+}
+public: void vec4() {
+	char letter;
+	ifstream f;
+	std::vector<char> v4;
+	f.open("text.txt");
+	for (int i = 0; i < 30; i++)
+		f >> letter;
+	for (int i = 0; i < 10; i++)
 	{
-		f >> values[i];
-		v4.push_back(values[i]);
+		f >> letter;
+		v4.push_back(letter);
 	}
 	sort(v4.begin(), v4.end());
 	writeTo(v4);
-	for (int i = 40; i < 50; i++)
+	f.close();
+}
+public: void vec5() {
+	char letter;
+	ifstream f;
+	std::vector<char> v5;
+	f.open("text.txt");
+	for (int i = 0; i < 40; i++)
+		f >> letter;
+	for (int i = 0; i < 10; i++)
 	{
-		f >> values[i];
-		v5.push_back(values[i]);
+		f >> letter;
+		v5.push_back(letter);
 	}
 	sort(v5.begin(), v5.end());
 	writeTo(v5);
-	for (int i = 50; i < 60; i++)
+	f.close();
+}
+public: void vec6() {
+	char letter;
+	ifstream f;
+	std::vector<char> v6;
+	f.open("text.txt");
+	for (int i = 0; i < 50; i++)
+		f >> letter;
+	for (int i = 0; i < 10; i++)
 	{
-		f >> values[i];
-		v6.push_back(values[i]);
+		f >> letter;
+		v6.push_back(letter);
 	}
 	sort(v6.begin(), v6.end());
 	writeTo(v6);
-	for (int i = 60; i < 70; i++)
+	f.close();
+}
+public: void vec7() {
+	char letter;
+	ifstream f;
+	std::vector<char> v7;
+	f.open("text.txt");
+	for (int i = 0; i < 60; i++)
+		f >> letter;
+	for (int i = 0; i < 10; i++)
 	{
-		f >> values[i];
-		v7.push_back(values[i]);
+		f >> letter;
+		v7.push_back(letter);
 	}
 	sort(v7.begin(), v7.end());
 	writeTo(v7);
-	for (int i = 70; i < 80; i++)
+	f.close();
+}
+public: void vec8() {
+	char letter;
+	ifstream f;
+	std::vector<char> v8;
+	f.open("text.txt");
+	for (int i = 0; i < 70; i++)
+		f >> letter;
+	for (int i = 0; i < 10; i++)
 	{
-		f >> values[i];
-		v8.push_back(values[i]);
+		f >> letter;
+		v8.push_back(letter);
 	}
 	sort(v8.begin(), v8.end());
 	writeTo(v8);
-	for (int i = 80; i < 90; i++)
+	f.close();
+}
+public: void vec9() {
+	char letter;
+	ifstream f;
+	std::vector<char> v9;
+	f.open("text.txt");
+	for (int i = 0; i < 80; i++)
+		f >> letter;
+	for (int i = 0; i < 10; i++)
 	{
-		f >> values[i];
-		v9.push_back(values[i]);
+		f >> letter;
+		v9.push_back(letter);
 	}
 	sort(v9.begin(), v9.end());
 	writeTo(v9);
-	for (int i = 90; i < 100; i++)
+	f.close();
+}
+public: void vec10() {
+	char letter;
+	ifstream f;
+	std::vector<char> v10;
+	f.open("text.txt");
+	for (int i = 0; i < 90; i++)
+		f >> letter;
+	for (int i = 0; i < 10; i++)
 	{
-		f >> values[i];
-		v10.push_back(values[i]);
+		f >> letter;
+		v10.push_back(letter);
 	}
 	sort(v10.begin(), v10.end());
 	writeTo(v10);
 	f.close();
+}
+
+private: System::Void button1_Click(System::Object^ sender, System::EventArgs^ e) {
+	char values[100];
+	ofstream filestream("sorted.txt");
+	filestream.close();
+	myThread1 = gcnew Thread(gcnew ThreadStart(this, &MyForm::vec1));
+	myThread2 = gcnew Thread(gcnew ThreadStart(this, &MyForm::vec2));
+	myThread3 = gcnew Thread(gcnew ThreadStart(this, &MyForm::vec3));
+	myThread4 = gcnew Thread(gcnew ThreadStart(this, &MyForm::vec4));
+	myThread5 = gcnew Thread(gcnew ThreadStart(this, &MyForm::vec5));
+	myThread6 = gcnew Thread(gcnew ThreadStart(this, &MyForm::vec6));
+	myThread7 = gcnew Thread(gcnew ThreadStart(this, &MyForm::vec7));
+	myThread8 = gcnew Thread(gcnew ThreadStart(this, &MyForm::vec8));
+	myThread9 = gcnew Thread(gcnew ThreadStart(this, &MyForm::vec9));
+	myThread10 = gcnew Thread(gcnew ThreadStart(this, &MyForm::vec10));
+	myThread1->Start();
+	myThread1->Join();
+	myThread2->Start();
+	myThread2->Join();
+	myThread3->Start();
+	myThread3->Join();
+	myThread4->Start();
+	myThread4->Join();
+	myThread5->Start();
+	myThread5->Join();
+	myThread6->Start();
+	myThread6->Join();
+	myThread7->Start();
+	myThread7->Join();
+	myThread8->Start();
+	myThread8->Join();
+	myThread9->Start();
+	myThread9->Join();
+	myThread10->Start();
+	myThread10->Join();
 	String^ Filename = "sorted.txt";
-	StreamReader^ file = File::OpenText(Filename); // Cчитывание файла
+	StreamReader^ file = File::OpenText(Filename);// Cчитывание файла
 	textBox2->Text = file->ReadToEnd();
 }
 };

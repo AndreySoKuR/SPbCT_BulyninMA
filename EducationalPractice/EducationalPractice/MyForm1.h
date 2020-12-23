@@ -1,8 +1,8 @@
 #pragma once
 #include "MyForm.h"
 
-namespace EducationalPractice {
 
+namespace EducationalPractice {
 	using namespace System;
 	using namespace System::ComponentModel;
 	using namespace System::Collections;
