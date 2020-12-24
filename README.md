@@ -40,4 +40,3 @@
 ##  ✔ Лабораторная работа 23
  [📁 Задание](https://github.com/m1xxos/SPbCT_BulyninMA/tree/main/Laba23)
 ##  ✔ Лабораторная работа 24
- [📁 Задание](https://github.com/m1xxos/SPbCT_BulyninMA/tree/main/Laba24)
