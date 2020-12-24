@@ -10,7 +10,6 @@
 #include <chrono>
 
 
-
 namespace EducationalPractice {
 	using namespace System;
 	using namespace System::ComponentModel;
@@ -36,7 +35,6 @@ namespace EducationalPractice {
 			DateTime datetime = DateTime::Now;
 			this->label2->Text = datetime.ToString();
 			
-			
 			//
 			//TODO: добавьте код конструктора
 			//
@@ -57,17 +55,14 @@ namespace EducationalPractice {
 	private: System::Windows::Forms::Label^ label2;
 	private: System::Windows::Forms::Button^ button1;
 
+	//Потоки
 	private: Thread^ myThread1;
 	private: Thread^ myThread2;
 	private: Thread^ myThread3;
 	private: Thread^ myThread4;
 	private: Thread^ myThread5;
-	private: Thread^ myThread6;
-	private: Thread^ myThread7;
-	private: Thread^ myThread8;
-	private: Thread^ myThread9;
-	private: Thread^ myThread10;
 	
+
 
 	private: System::Windows::Forms::TextBox^ textBox1;
 	private: System::Windows::Forms::Button^ button2;
@@ -104,18 +99,22 @@ namespace EducationalPractice {
 			// label1
 			// 
 			this->label1->AutoSize = true;
+			this->label1->Font = (gcnew System::Drawing::Font(L"Arial Narrow", 12, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
+				static_cast<System::Byte>(204)));
 			this->label1->Location = System::Drawing::Point(387, 34);
 			this->label1->Name = L"label1";
-			this->label1->Size = System::Drawing::Size(153, 13);
+			this->label1->Size = System::Drawing::Size(189, 20);
 			this->label1->TabIndex = 0;
 			this->label1->Text = L"Булынин Михаил, 590 группа";
 			// 
 			// label2
 			// 
 			this->label2->AutoSize = true;
+			this->label2->Font = (gcnew System::Drawing::Font(L"Arial Narrow", 12, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
+				static_cast<System::Byte>(204)));
 			this->label2->Location = System::Drawing::Point(259, 34);
 			this->label2->Name = L"label2";
-			this->label2->Size = System::Drawing::Size(33, 13);
+			this->label2->Size = System::Drawing::Size(37, 20);
 			this->label2->TabIndex = 1;
 			this->label2->Text = L"Дата";
 			// 
@@ -168,7 +167,7 @@ namespace EducationalPractice {
 			this->textBox2->Name = L"textBox2";
 			this->textBox2->ReadOnly = true;
 			this->textBox2->ScrollBars = System::Windows::Forms::ScrollBars::Vertical;
-			this->textBox2->Size = System::Drawing::Size(354, 139);
+			this->textBox2->Size = System::Drawing::Size(354, 159);
 			this->textBox2->TabIndex = 9;
 			// 
 			// label4
@@ -205,32 +204,25 @@ namespace EducationalPractice {
 
 	
 private: System::Void button2_Click(System::Object^ sender, System::EventArgs^ e) {
+	//Считываю первый файл и вывожу на экран
 	String^ Filename = "text.txt";
 	StreamReader^ file = File::OpenText(Filename); 
 	textBox1->Text = file->ReadToEnd(); 
 }
 	
-public: void vec1() {
+//Функции для потоков
+public: void tr1() {
 	char letter;
 	ifstream f;
-	std::vector<char> v1;
+	std::vector<char> v1, v2;
 	f.open("text.txt");
 	for (int i = 0; i < 10; i++)
 	{
 		f >> letter;
-		v1.push_back(letter);
+		v1.push_back(letter);//запись
 	}
-	sort(v1.begin(), v1.end());
-	writeTo(v1);
-	f.close();
-}
-public: void vec2() {
-	char letter;
-	ifstream f;
-	std::vector<char> v2;
-	f.open("text.txt");
-	for (int i = 0; i < 10; i++)
-		f >> letter;
+	sort(v1.begin(), v1.end());//сортировка
+	writeTo(v1);//вывод в файл
 	for (int i = 0; i < 10; i++)
 	{
 		f >> letter;
@@ -240,11 +232,11 @@ public: void vec2() {
 	writeTo(v2);
 	f.close();
 }
-public: void vec3() {
+
+public: void tr2() {
 	char letter;
 	ifstream f;
-	f.seekg(20);
-	std::vector<char> v3;
+	std::vector<char> v3, v4;
 	f.open("text.txt");
 	for (int i = 0; i < 20; i++)
 		f >> letter;
@@ -255,15 +247,6 @@ public: void vec3() {
 	}
 	sort(v3.begin(), v3.end());
 	writeTo(v3);
-	f.close();
-}
-public: void vec4() {
-	char letter;
-	ifstream f;
-	std::vector<char> v4;
-	f.open("text.txt");
-	for (int i = 0; i < 30; i++)
-		f >> letter;
 	for (int i = 0; i < 10; i++)
 	{
 		f >> letter;
@@ -273,10 +256,11 @@ public: void vec4() {
 	writeTo(v4);
 	f.close();
 }
-public: void vec5() {
+
+public: void tr3() {
 	char letter;
 	ifstream f;
-	std::vector<char> v5;
+	std::vector<char> v5, v6;
 	f.open("text.txt");
 	for (int i = 0; i < 40; i++)
 		f >> letter;
@@ -287,15 +271,6 @@ public: void vec5() {
 	}
 	sort(v5.begin(), v5.end());
 	writeTo(v5);
-	f.close();
-}
-public: void vec6() {
-	char letter;
-	ifstream f;
-	std::vector<char> v6;
-	f.open("text.txt");
-	for (int i = 0; i < 50; i++)
-		f >> letter;
 	for (int i = 0; i < 10; i++)
 	{
 		f >> letter;
@@ -305,10 +280,11 @@ public: void vec6() {
 	writeTo(v6);
 	f.close();
 }
-public: void vec7() {
+
+public: void tr4() {
 	char letter;
 	ifstream f;
-	std::vector<char> v7;
+	std::vector<char> v7, v8;
 	f.open("text.txt");
 	for (int i = 0; i < 60; i++)
 		f >> letter;
@@ -319,15 +295,6 @@ public: void vec7() {
 	}
 	sort(v7.begin(), v7.end());
 	writeTo(v7);
-	f.close();
-}
-public: void vec8() {
-	char letter;
-	ifstream f;
-	std::vector<char> v8;
-	f.open("text.txt");
-	for (int i = 0; i < 70; i++)
-		f >> letter;
 	for (int i = 0; i < 10; i++)
 	{
 		f >> letter;
@@ -337,10 +304,11 @@ public: void vec8() {
 	writeTo(v8);
 	f.close();
 }
-public: void vec9() {
+
+public: void tr5() {
 	char letter;
 	ifstream f;
-	std::vector<char> v9;
+	std::vector<char> v9, v10;
 	f.open("text.txt");
 	for (int i = 0; i < 80; i++)
 		f >> letter;
@@ -351,15 +319,6 @@ public: void vec9() {
 	}
 	sort(v9.begin(), v9.end());
 	writeTo(v9);
-	f.close();
-}
-public: void vec10() {
-	char letter;
-	ifstream f;
-	std::vector<char> v10;
-	f.open("text.txt");
-	for (int i = 0; i < 90; i++)
-		f >> letter;
 	for (int i = 0; i < 10; i++)
 	{
 		f >> letter;
@@ -371,19 +330,15 @@ public: void vec10() {
 }
 
 private: System::Void button1_Click(System::Object^ sender, System::EventArgs^ e) {
-	char values[100];
 	ofstream filestream("sorted.txt");
 	filestream.close();
-	myThread1 = gcnew Thread(gcnew ThreadStart(this, &MyForm::vec1));
-	myThread2 = gcnew Thread(gcnew ThreadStart(this, &MyForm::vec2));
-	myThread3 = gcnew Thread(gcnew ThreadStart(this, &MyForm::vec3));
-	myThread4 = gcnew Thread(gcnew ThreadStart(this, &MyForm::vec4));
-	myThread5 = gcnew Thread(gcnew ThreadStart(this, &MyForm::vec5));
-	myThread6 = gcnew Thread(gcnew ThreadStart(this, &MyForm::vec6));
-	myThread7 = gcnew Thread(gcnew ThreadStart(this, &MyForm::vec7));
-	myThread8 = gcnew Thread(gcnew ThreadStart(this, &MyForm::vec8));
-	myThread9 = gcnew Thread(gcnew ThreadStart(this, &MyForm::vec9));
-	myThread10 = gcnew Thread(gcnew ThreadStart(this, &MyForm::vec10));
+	//создаю потоки
+	myThread1 = gcnew Thread(gcnew ThreadStart(this, &MyForm::tr1));
+	myThread2 = gcnew Thread(gcnew ThreadStart(this, &MyForm::tr2));
+	myThread3 = gcnew Thread(gcnew ThreadStart(this, &MyForm::tr3));
+	myThread4 = gcnew Thread(gcnew ThreadStart(this, &MyForm::tr4));
+	myThread5 = gcnew Thread(gcnew ThreadStart(this, &MyForm::tr5));
+	//запускаю потоки и жду их окончания
 	myThread1->Start();
 	myThread1->Join();
 	myThread2->Start();
@@ -394,19 +349,13 @@ private: System::Void button1_Click(System::Object^ sender, System::EventArgs^ e
 	myThread4->Join();
 	myThread5->Start();
 	myThread5->Join();
-	myThread6->Start();
-	myThread6->Join();
-	myThread7->Start();
-	myThread7->Join();
-	myThread8->Start();
-	myThread8->Join();
-	myThread9->Start();
-	myThread9->Join();
-	myThread10->Start();
-	myThread10->Join();
+
+
+	//считываю файл и вывожу на экран
 	String^ Filename = "sorted.txt";
-	StreamReader^ file = File::OpenText(Filename);// Cчитывание файла
+	StreamReader^ file = File::OpenText(Filename);
 	textBox2->Text = file->ReadToEnd();
+	file->Close();
 }
 };
 }

@@ -1,8 +1,6 @@
 ﻿  MyForm.cpp
-C:\Users\bulyn\Desktop\SPbCT_BulyninMA\EducationalPractice\EducationalPractice\MyForm.h(374,7): warning C4101: values: неиспользованная локальная переменная
 C:\Users\bulyn\Desktop\SPbCT_BulyninMA\EducationalPractice\EducationalPractice\MyForm.cpp(8,1): warning C4829: Возможно, неправильные параметры функции main. Рекомендуемый вариант - "int main(Platform::Array<Platform::String^>^ argv)"
   MyForm1.cpp
-C:\Users\bulyn\Desktop\SPbCT_BulyninMA\EducationalPractice\EducationalPractice\MyForm.h(374,7): warning C4101: values: неиспользованная локальная переменная
   Создание кода...
   MathLibrary.obj : обнаружен модуль MSIL; для MSIL последовательная компоновка отключена; выполняется полная компоновка
      Создается библиотека C:\Users\bulyn\Desktop\SPbCT_BulyninMA\EducationalPractice\Debug\EducationalPractice.lib и объект C:\Users\bulyn\Desktop\SPbCT_BulyninMA\EducationalPractice\Debug\EducationalPractice.exp
